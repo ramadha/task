@@ -1,39 +1,80 @@
-# Assignment
-Create a one page application following the LO-FIs given in this assignment.
+# Register Card Application
 
-We have provided the base code to get you started.
+This project is a single-page React application that was built for a technical assignment. It follows the LO-FI wireframes and functional requirements that were provided.
 
-## LO-FI
-Remember these are LO-FI and should only be treated as such.
-![lofi](https://raw.githubusercontent.com/EdenCoNz/recruit-react/master/lofi.png)
+It showcases clean architecture, uses Context API for state management, and has a responsive and accessible design. It also includes unit tests to make sure everything works as expected.
 
-## Spec
-These are the only functional requirements for your implementation:
+---
 
-### Navigation
-- Click on burger icon shows menu
-- Click on back shows register card form 
+## Features
 
-## Commits
-Please commit frequently to communicate your thoughts while working on this assignment.
+- **Responsive UI**: Mobile-first design (breakpoints for tablet and desktop).
+- **State Management**: React Context API (for user data and menu toggle state).
+- **Accessibility**: Semantic HTML, ARIA attributes, focus-visible outlines, and keyboard navigation support.
+- **Unit Tests**: Component and context tests
+- **Clean Code**: pre-commit hooks (Husky + lint-staged).
 
-## What is valued
-- Unit tests
-- Clean Code
-- State Management
-- Design (Responsive)
-- Accessibility
+---
 
-## Duration
-Use roughly around an hour on this assignment. Ensure you complete the basic requirements of this assignment but you are welcome to showcase more if you wish.
+## Project Structure
 
+src/
+├── components/ # Reusable UI components
+│ ├── Header.tsx
+│ ├── CardForm.tsx
+│ └── Menu.tsx
+├── context/ # React Contexts for global state
+│ ├── MenuContext.tsx
+│ └── UserContext.tsx
+├── styles/ # SCSS modules and global styles
+│ ├── global.scss
+│ ├── CardForm.module.scss
+│ └── Menu.module.scss
+├── App.tsx # Root
+├── index.tsx # Entry point
+└── tests/ # Unit tests
 
-# Tools & Tech
-You can use any tools, plugins and technologies as required for you to complete this assignment on top of what is provided but we expect that you create the UI components without the use of existing component libraries
+---
 
--	React
--	Typescript
--	SCSS
+## Tech Stack
 
-# Submitting Assignment
-Feel free to create a public GitHub repo or private GitHub repo where it's accessible to the assessor
+- **React 18 + TypeScript**
+- **SCSS** (CSS Modules)
+- **Jest + React Testing Library** (unit tests)
+- **Husky + lint-staged** (pre-commit hooks)
+- **Webpack**
+
+---
+
+## Responsive Design
+
+- Mobile-first layout for small devices
+- Media queries at **768px** (tablet) and **1024px** (desktop)
+
+---
+
+## Accessibility Features
+
+- Semantic elements: `<header>`, `<main>`, `<form>`
+- **ARIA Labels**:
+  - `aria-label="Open menu"`
+  - `aria-expanded` on burger menu
+- Keyboard-friendly navigation:
+  - Visible `:focus` styles on inputs and buttons
+- Screen reader friendly
+
+---
+
+## Running the Project
+
+### Install dependencies
+
+npm install
+
+### Start Development server
+
+npm start
+
+### Run unit tests
+
+npm test

@@ -1,46 +1,47 @@
-const path = require("path");
-const TerserPlugin = require("terser-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+// webpack.config.mjs
+import path from 'path';
+import TerserPlugin from 'terser-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-module.exports = (env, argv) => {
+export default () => {
   return {
     entry: {
-      index: "./src/index.tsx",
+      index: './src/index.tsx',
     },
     mode: 'development',
-    devtool: "source-map",
+    devtool: 'source-map',
     resolve: {
-      extensions: [".js", ".ts", ".tsx", ".jsx"],
+      extensions: ['.js', '.ts', '.tsx', '.jsx'],
     },
     module: {
       rules: [
         {
           test: /\.(ts|tsx)$/,
           exclude: /node_modules/,
-          use: "ts-loader",
+          use: 'ts-loader',
         },
         {
           test: /\.scss$/i,
           use: [
-            "style-loader",
+            'style-loader',
             {
-              loader: "css-loader",
+              loader: 'css-loader',
               options: {
                 modules: {
-                  localIdentName: "[local]-[hash:base64:5]",
+                  localIdentName: '[local]-[hash:base64:5]',
                 },
               },
             },
-            "sass-loader",
+            'sass-loader',
           ],
         },
         {
-          test: /.svg/i,
+          test: /\.svg$/i,
           issuer: /\.[jt]sx?$/,
           use: [
             {
-              loader: "@svgr/webpack",
+              loader: '@svgr/webpack',
               options: { icon: true, typescript: true },
             },
           ],
@@ -49,11 +50,10 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: "index.css",
+        filename: 'index.css',
       }),
-
       new HtmlWebpackPlugin({
-        template: __dirname + "/public/index.html",
+        template: path.resolve('public', 'index.html'),
       }),
     ],
     optimization: {
@@ -65,9 +65,9 @@ module.exports = (env, argv) => {
       ],
     },
     output: {
-      filename: "[name].js",
-      assetModuleFilename: "[name].[ext]",
-      path: path.resolve(__dirname, "dist"),
+      filename: '[name].js',
+      assetModuleFilename: '[name].[ext]',
+      path: path.resolve('dist'),
       clean: true,
     },
   };

@@ -12,13 +12,13 @@ const CardForm: React.FC = () => {
       <p>Welcome {user.firstName}</p>
       <form className={styles.form}>
         <label htmlFor="cardNumber">Card Number</label>
-        <input id="cardNumber" type="text" placeholder="1234 5678 9012 3456" />
+        <input id="cardNumber" type="text" placeholder="1234 5678 9012 3456" required />
 
         <label htmlFor="cvc">CVC</label>
-        <input id="cvc" type="text" placeholder="123" />
+        <input id="cvc" type="text" placeholder="123" required />
 
         <label htmlFor="expiry">Expiry</label>
-        <input id="expiry" type="text" placeholder="MM/YY" />
+        <input id="expiry" type="text" placeholder="MM/YY" required />
 
         <button type="submit">Submit</button>
       </form>

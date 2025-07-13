@@ -4,7 +4,7 @@
   "description": "Create a one page application following the LO-FIs given in this assignment.",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack serve --open --config webpack.config.js",
+    "start": "npx webpack serve --open --config webpack.config.mjs",
     "test": "npx jest --config jest.config.mjs"
   },
   "lint-staged": {
