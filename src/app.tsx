@@ -1,5 +1,6 @@
 import React from 'react';
 import { MenuProvider, useMenuContext } from './context/MenuContext';
+import { UserProvider } from './context/UserContext';
 import CardForm from './components/CardForm';
 import Menu from './components/Menu';
 
@@ -9,9 +10,11 @@ const AppContent: React.FC = () => {
 };
 
 const App: React.FC = () => (
-  <MenuProvider>
-    <AppContent />
-  </MenuProvider>
+  <UserProvider>
+    <MenuProvider>
+      <AppContent />
+    </MenuProvider>
+  </UserProvider>
 );
 
 export default App;
