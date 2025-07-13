@@ -1,19 +1,22 @@
 import React from 'react';
+import { useMenuContext } from '../context/MenuContext';
+
 interface HeaderProps {
   title: string;
-  onMenuClick?: () => void;
-  onBackClick?: () => void;
+  isBack?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ title, onMenuClick, onBackClick }) => {
+const Header: React.FC<HeaderProps> = ({ title, isBack = false }) => {
+  const { toggleMenu, closeMenu } = useMenuContext();
+
   return (
     <header>
-      {onBackClick ? (
-        <button aria-label="Go back" onClick={onBackClick}>
+      {isBack ? (
+        <button aria-label="Go back" onClick={closeMenu} className="header-button">
           ←
         </button>
       ) : (
-        <button aria-label="Open menu" onClick={onMenuClick}>
+        <button aria-label="Open menu" onClick={toggleMenu} className="header-button">
           ☰
         </button>
       )}
