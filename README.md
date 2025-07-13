@@ -18,21 +18,21 @@ It showcases clean architecture, uses Context API for state management, and has 
 
 ## Project Structure
 
-src/
-├── components/ # Reusable UI components
-│ ├── Header.tsx
-│ ├── CardForm.tsx
-│ └── Menu.tsx
-├── context/ # React Contexts for global state
-│ ├── MenuContext.tsx
-│ └── UserContext.tsx
-├── styles/ # SCSS modules and global styles
-│ ├── global.scss
-│ ├── CardForm.module.scss
-│ └── Menu.module.scss
-├── App.tsx # Root
-├── index.tsx # Entry point
-└── tests/ # Unit tests
+src/<br/>
+|- components/<br/>
+|-- Header.tsx<br/>
+|-- CardForm.tsx<br/>
+|-- Menu.tsx<br/>
+|-context/<br/>
+|-- MenuContext.tsx<br/>
+|-- UserContext.tsx<br/>
+|- styles/<br/>
+|-- global.scss<br/>
+|-- CardForm.module.scss<br/>
+|-- Menu.module.scss<br/>
+|- App.tsx<br/>
+|- index.tsx<br/>
+|- `__tests__`/<br/>
 
 ---
 
