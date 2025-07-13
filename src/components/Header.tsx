@@ -6,7 +6,7 @@ interface HeaderProps {
   isBack?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ title, isBack = false }) => {
+const Header: React.FC<HeaderProps> = ({ title, isBack }) => {
   const { toggleMenu, closeMenu } = useMenuContext();
 
   return (
@@ -16,7 +16,12 @@ const Header: React.FC<HeaderProps> = ({ title, isBack = false }) => {
           ←
         </button>
       ) : (
-        <button aria-label="Open menu" onClick={toggleMenu} className="header-button">
+        <button
+          aria-label="Open menu"
+          aria-expanded={isBack}
+          onClick={toggleMenu}
+          className="header-button"
+        >
           ☰
         </button>
       )}
