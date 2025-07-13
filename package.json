@@ -5,11 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "npx webpack serve --open --config webpack.config.js",
-    "test": "npx jest --config jest.config.js"
+    "test": "npx jest --config jest.config.mjs"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": ["eslint --fix", "prettier --write"],
-    "*.scss": ["prettier --write"]
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +22,7 @@
     "@eslint/js": "^9.31.0",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/dom": "^10.3.0",
-    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.0",
     "@types/jest": "^29.5.12",
     "@types/react": "^18.3.3",
